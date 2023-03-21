@@ -25,5 +25,4 @@ void main() {
 	for (int i = 0; i < folderInstance.files.dir.size(); i++) {
 		std::cout << std::endl << folderInstance.files.dir[i] << std::endl;
 	}
-	//std::cout << std::endl << std::ifstream::read(drive) << '\n';
 }
