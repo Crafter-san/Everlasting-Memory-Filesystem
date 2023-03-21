@@ -1,6 +1,5 @@
 #include <iostream>
 #include "ememfs.hpp"
-#include <type_traits>
 void main() {
 	Device device = Device();
 	Drive drive = Drive("D");
