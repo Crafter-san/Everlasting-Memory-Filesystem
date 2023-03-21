@@ -8,7 +8,7 @@ struct Manage {
 	std::unordered_map<std::string, T> list;
 	std::vector<std::string> dir;
 
-	T& Create(T& obj = T()) {
+	T& Create(T obj = T()) {
 		if (!list.count(obj.name)) {
 			list[obj.name] = obj;
 			dir.push_back(obj.name);
@@ -17,18 +17,18 @@ struct Manage {
 	}
 
 	T Destroy(T& obj = T()) {
+		T result = obj;
 		if (list.count(obj.name)) {
 			list.erase(obj.name);
 			std::vector<std::string> new_dir;
-			T result;
 			for (int i = 0; i < dir.size(); i++) {
 				if (obj.name != dir[i]) new_dir.push_back(dir[i]);
 				else result = dir[i];
 			}
 			dir = new_dir;
-			return result;
+			//return obj;
 		}
-		else return obj;
+		return result;
 	}
 	T& Get(T& obj_ = T()) {
 		return list[obj_.name];
